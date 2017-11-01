@@ -10,6 +10,12 @@ def testing():
     for txt in texto:
         print (txt.get_text())
 
+def is_url(url):
+    if:
+        return True
+    else:
+        return False
+
 def get_html(url):
     return urllib.request.urlopen(url)
 
