@@ -1,1 +1,1 @@
-# rbrasil_noticias_bot
+# br_noticias_parser
