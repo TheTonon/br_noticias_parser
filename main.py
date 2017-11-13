@@ -1,6 +1,8 @@
 # -*-encoding:utf-8-*-
 import urllib.request
 import re
+from g1 import g1
+from r7 import r7
 
 lista_sites = ["g1.globo.com", 'r7.com', "uol.com.br", "terra.com.br", "brasil247.com.br"]
 
@@ -25,9 +27,11 @@ def get_site_name(url):
         if busca.search(url):
             print ("fechou")
             if contador_site_atual == 0:
-                parse_g1(url)
+                html = get_html(url)
+                return (g1.parse(html))
             if contador_site_atual == 1:
-                parse_r7(url)
+                html = get_html(url)
+                return (r7.parse(html))
             break
         else:
             contador_site_atual = contador_site_atual + 1
@@ -62,3 +66,5 @@ def parse_r7(noticia_url):
         texto.join(txt.get_text())
     return texto
 
+print(g1.__dict__)
+print(get_site_name("https://g1.globo.com/sao-paulo/noticia/radares-de-aeroportos-nao-detectam-drones-segundo-aeronautica.ghtml"))
