@@ -9,7 +9,7 @@ class uol:
         sopa = BeautifulSoup(html, "lxml")
         artigo = sopa.find("article")
         div_texto = sopa.find("div", id_=re.compile('^texto'))
-        paragrafos = sopa.find_all("p")
+        paragrafos = div_texto.find_all("p")
         texto = []
         for paragrafo in paragrafos:
             texto.append("\n")
