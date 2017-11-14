@@ -3,6 +3,7 @@ import urllib.request
 import re
 from g1 import g1
 from r7 import r7
+from uol import uol
 
 lista_sites = ["g1.globo.com", 'r7.com', "uol.com.br", "terra.com.br", "brasil247.com.br"]
 
@@ -19,7 +20,7 @@ def is_url(url):
     else:
         return False
 
-def get_site_name(url):
+def get_noticia(url):
     contador_site_atual = 0
     for site in lista_sites:
         print ("{0}".format(site))
@@ -32,6 +33,9 @@ def get_site_name(url):
             if contador_site_atual == 1:
                 html = get_html(url)
                 return (r7.parse(html))
+            if contador_site_atual == 2:
+                html = get_html(url)
+                return uol.parse(html)
             break
         else:
             contador_site_atual = contador_site_atual + 1
@@ -67,4 +71,5 @@ def parse_r7(noticia_url):
     return texto
 
 print(g1.__dict__)
-print(get_site_name("https://g1.globo.com/sao-paulo/noticia/radares-de-aeroportos-nao-detectam-drones-segundo-aeronautica.ghtml"))
+print(get_noticia("https://g1.globo.com/sao-paulo/noticia/radares-de-aeroportos-nao-detectam-drones-segundo-aeronautica.ghtml"))
+print(get_noticia("https://noticias.uol.com.br/cotidiano/ultimas-noticias/2017/11/14/presidente-da-alerj-e-jacob-barata-filho-sao-alvo-de-operacao-da-pf-no-rio.htm"))
