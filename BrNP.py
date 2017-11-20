@@ -1,6 +1,7 @@
 # -*-encoding:utf-8-*-
 import sys
 sys.path.append('br_noticias_parser/')
+import requests
 import urllib.request
 import re
 from g1 import g1
@@ -25,6 +26,7 @@ def get_noticia(url):
         if busca.search(url):
             print ("fechou")
             if contador_site_atual == 0:
+                print(url)
                 html = get_html(url)
                 return (g1.parse(html))
             if contador_site_atual == 1:
@@ -43,7 +45,8 @@ def get_noticia(url):
 
 def get_html(url):
     if is_url(url):
-        return urllib.request.urlopen(url)
+        r = requests.get(url)
+        return r.text
     else:
         return "url invalida"
 
