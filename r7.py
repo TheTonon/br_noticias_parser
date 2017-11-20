@@ -3,6 +3,7 @@
 import urllib.request
 import re
 from bs4 import BeautifulSoup
+
 class r7:
     def parse(html):
         sopa = BeautifulSoup(html, "lxml")

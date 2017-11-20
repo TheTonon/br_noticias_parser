@@ -1,9 +1,11 @@
 # -*-encoding:utf-8-*-
 import urllib.request
+import re
 from g1 import g1
 from r7 import r7
 from terra import terra
 from uol import uol
+
 
 lista_sites = ["g1.globo.com", 'r7.com', "uol.com.br", "terra.com.br", "brasil247.com.br"]
 
