@@ -9,13 +9,6 @@ from uol import uol
 
 lista_sites = ["g1.globo.com", 'r7.com', "uol.com.br", "terra.com.br", "brasil247.com.br"]
 
-def testing():
-    noticia = urllib.request.urlopen("https://g1.globo.com/sao-paulo/noticia/doria-cria-nova-secretaria-para-acomodar-bruno-covas-apos-vice-prefeito-deixar-comando-da-zeladoria.ghtml")
-    sopa = BeautifulSoup(noticia, "lxml")
-    texto = sopa.find_all("p", class_=re.compile('^content-text__container'))
-    for txt in texto:
-        print (txt.get_text())
-
 def is_url(url):
     if url.startswith("http://") or url.startswith("https://"):
         return True
@@ -74,9 +67,3 @@ def parse_r7(noticia_url):
         texto.join("\n")
         texto.join(txt.get_text())
     return texto
-
-print(g1.__dict__)
-print(get_noticia("https://g1.globo.com/sao-paulo/noticia/radares-de-aeroportos-nao-detectam-drones-segundo-aeronautica.ghtml"))
-print(get_noticia("https://noticias.uol.com.br/cotidiano/ultimas-noticias/2017/11/14/presidente-da-alerj-e-jacob-barata-filho-sao-alvo-de-operacao-da-pf-no-rio.htm"))
-print(get_noticia("https://www.terra.com.br/noticias/brasil/rota-2030-deve-ter-aliquota-extra-do-ipi-vinculada-a-investimento-em-tecnologia-diz-presidente-da-anfavea,cb40eff85c29b43fb82b9cf891de2131h74361r8.html"))
-
