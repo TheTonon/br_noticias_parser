@@ -1,7 +1,9 @@
 # -*-encoding:utf-8-*-
+import sys
+sys.path.append('br_noticias_parser/')
 import urllib.request
 import re
-import g1
+from g1 import g1
 from r7 import r7
 from terra import terra
 from uol import uol
