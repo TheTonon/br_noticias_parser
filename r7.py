@@ -13,5 +13,5 @@ class r7:
         for txt in texto_cru:
             texto.append("\n")
             texto.append(txt.get_text())
-        return ''.join(get_texto)
+        return ''.join(texto)
 

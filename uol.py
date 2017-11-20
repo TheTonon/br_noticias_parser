@@ -7,8 +7,8 @@ from bs4 import BeautifulSoup
 class uol:
     def parse(html):
         sopa = BeautifulSoup(html, "lxml")
-        artigo = sopa.find("article")
-        div_texto = sopa.find("div", id_=re.compile('^texto'))
+        #div_texto = sopa.find("div", id_=re.compile('^texto'))
+        div_texto = sopa.find('div', attrs={'id':'texto'})
         paragrafos = div_texto.find_all("p")
         texto = []
         for paragrafo in paragrafos:
