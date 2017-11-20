@@ -1,10 +1,10 @@
 # -*-encoding:utf-8-*-
-import urllib.request
-import re
-import g1
-import r7
-import uol
-import terra
+#import urllib.request
+#import re
+#import g1
+#import r7
+#import uol
+#import terra
 
 lista_sites = ["g1.globo.com", 'r7.com', "uol.com.br", "terra.com.br", "brasil247.com.br"]
 
