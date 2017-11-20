@@ -16,6 +16,10 @@ def is_url(url):
     if url.startswith("http://") or url.startswith("https://"):
         return True
     else:
+        if url.startswith("http:/"):
+            new_url = str(url).replace('http:/', 'http://')
+        if url.startswith("https:/"):
+            new_url = str(url).replace('https:/', 'https://')
         return False
 
 def get_noticia(url):
