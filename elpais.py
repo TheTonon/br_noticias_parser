@@ -13,10 +13,10 @@ class elpais:
         content_paragraphs = content.find_all("p")
         text = []
         for paragraph in content_paragraphs:
-            text.append(paragraph.get_text())
+            text.append('\t' + paragraph.get_text())
             text.append('\n')
         for paragraph in intro_paragraph:
-            text.append(paragraph.get_text())
+            text.append('\t' + paragraph.get_text())
             text.append('\n')
         return ''.join(text)
 
