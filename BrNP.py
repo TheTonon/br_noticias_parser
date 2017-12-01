@@ -47,7 +47,7 @@ def get_noticia(url):
             return parsers[site_counter](html)
         else:
             site_counter = site_counter + 1
-    return "Ocorreu um erro. Provavelmente o site não é suportado"
+    return None 
 
 def get_html(url):
     if is_url(url):
