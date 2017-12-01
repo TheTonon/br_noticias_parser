@@ -10,20 +10,23 @@ from terra import terra
 from uol import uol
 from folha import folha
 from elpais import elpais
+from exame import exame
 
 lista_sites = ["folha.uol.com.br",
                "g1.globo.com",
                "r7.com",
                "uol.com.br",
                "terra.com.br",
-               "brasil.elpais.com"]
+               "brasil.elpais.com",
+               "exame.abril.com.br"]
 
 parsers = [folha.parse,
            g1.parse,
            r7.parse,
            uol.parse,
            terra.parse,
-           elpais.parse]
+           elpais.parse,
+           exame.parse]
 
 def is_url(url):
     if url.startswith("http://") or url.startswith("https://"):
