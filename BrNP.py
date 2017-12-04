@@ -44,7 +44,7 @@ def get_noticia(url):
     for site in lista_sites:
         busca = re.compile("{0}".format(site))
         if busca.search(url):
-            return parsers[site_counter](html)
+            return parsers[site_counter](html), site
         else:
             site_counter = site_counter + 1
     return None 
