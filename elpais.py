@@ -7,6 +7,8 @@ from bs4 import BeautifulSoup
 class elpais:
     def parse(html):
         soup = BeautifulSoup(html, "lxml")
+        intro_paragraph = None
+        content_paragraphs = None
         try:
             intro = soup.find('div', attrs={'id':'articulo-introduccion'})
             intro_paragraph = intro.find_all("p")
