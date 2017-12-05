@@ -18,12 +18,14 @@ class elpais:
         except:
             pass
         text = []
-        for paragraph in content_paragraphs:
-            text.append('\t' + paragraph.get_text())
-            text.append('\n')
-        for paragraph in intro_paragraph:
-            text.append('\t' + paragraph.get_text())
-            text.append('\n')
+        if content_paragraphs:
+            for paragraph in content_paragraphs:
+                text.append('\t' + paragraph.get_text())
+                text.append('\n')
+        if intro_paragraph:
+            for paragraph in intro_paragraph:
+                text.append('\t' + paragraph.get_text())
+                text.append('\n')
         return ''.join(text)
 
     def get_article(url):
