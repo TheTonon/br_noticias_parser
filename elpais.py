@@ -7,10 +7,16 @@ from bs4 import BeautifulSoup
 class elpais:
     def parse(html):
         soup = BeautifulSoup(html, "lxml")
-        intro = soup.find('div', attrs={'id':'articulo-introduccion'})
-        intro_paragraph = intro.find_all("p")
-        content = soup.find('div', attrs={'id':'articulo_contenedor'})
-        content_paragraphs = content.find_all("p")
+        try:
+            intro = soup.find('div', attrs={'id':'articulo-introduccion'})
+            intro_paragraph = intro.find_all("p")
+        except:
+            pass
+        try:
+            content = soup.find('div', attrs={'id':'articulo_contenedor'})
+            content_paragraphs = content.find_all("p")
+        except:
+            pass
         text = []
         for paragraph in content_paragraphs:
             text.append('\t' + paragraph.get_text())
