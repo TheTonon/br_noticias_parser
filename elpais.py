@@ -33,7 +33,7 @@ class elpais:
             for paragraph in intro_paragraph:
                 text.append('\t' + paragraph.get_text())
                 text.append('\n')
-        return ''.join(text), title
+        return ''.join(text), title.get_text()
 
     def get_article(url):
         response = requests.get(url)
