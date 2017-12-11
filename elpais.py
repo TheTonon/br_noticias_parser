@@ -20,6 +20,11 @@ class elpais:
         except:
             pass
         text = []
+        try:
+            title = soup.find('h1', attrs={'id':'articulo-titulo'})
+            title_text = title.find_all('p')
+        except:
+            pass
         if content_paragraphs:
             for paragraph in content_paragraphs:
                 text.append('\t' + paragraph.get_text())
@@ -28,7 +33,7 @@ class elpais:
             for paragraph in intro_paragraph:
                 text.append('\t' + paragraph.get_text())
                 text.append('\n')
-        return ''.join(text)
+        return ''.join(text), title
 
     def get_article(url):
         response = requests.get(url)
