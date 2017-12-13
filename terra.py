@@ -15,7 +15,8 @@ class terra:
             div.decompose()
         paragrafos = div_artigo.find_all('p')
         texto = []
+        title = sopa.find('h1').get_text()
         for paragrafo in paragrafos:
             texto.append(paragrafo.get_text().replace('\n', '').replace('   ', ' ').replace('  ', ' '))
             texto.append('\n')
-        return ''.join(texto)
+        return ''.join(texto), title

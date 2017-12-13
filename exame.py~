@@ -10,11 +10,10 @@ class exame:
         section = soup.find('section', attrs={'class':'article-content'})
         content = section.find_all('p')
         text = []
-        title = soup.find('h1', attrs={'class':'article-title'}).get_text()
         for paragraph in content:
-            text.append(paragraph.get_text())
+            text.append('\t' + paragraph.get_text())
             text.append('\n')
-        return ''.join(text), title
+        return ''.join(text)
 
     def get_article(url):
         response = requests.get(url)
