@@ -14,7 +14,7 @@ class uol:
         try:
             title = soup.find('title').get_text()
         except Exception as e:
-            print e
+            print(e)
         for paragrafo in paragrafos:
             texto.append("\n")
             texto.append(paragrafo.get_text())
