@@ -11,7 +11,11 @@ class folha:
         content = article.find('div',{'class':'content'})
         paragraphs = content.find_all('p')
         final_text = []
-        title = soup.find('h1', atrrs={'itemprop':'headline'}).get_text()
+        try:
+            title = soup.find('h1', atrrs={'itemprop':'headline'}).get_text()
+        except Exception as e:
+            print(e)
+            title = "Folha"
         for paragraph in paragraphs:
             final_text.append("\n")
             final_text.append(paragraph.get_text())
