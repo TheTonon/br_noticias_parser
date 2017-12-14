@@ -11,7 +11,10 @@ class uol:
         div_texto = soup.find('div', attrs={'id':'texto'})
         paragrafos = div_texto.find_all("p")
         texto = []
-        title = soup.find('title').get_text()
+        try:
+            title = soup.find('title').get_text()
+        except Exception as e:
+            print e
         for paragrafo in paragrafos:
             texto.append("\n")
             texto.append(paragrafo.get_text())
