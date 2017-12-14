@@ -12,7 +12,7 @@ class folha:
         paragraphs = content.find_all('p')
         final_text = []
         try:
-            title = soup.find('h1', atrrs={'itemprop':'headline'}).get_text()
+            title = soup.find('h1').get_text()
         except Exception as e:
             print(e)
             title = "Folha"
