@@ -11,7 +11,7 @@ class uol:
         div_texto = soup.find('div', attrs={'id':'texto'})
         paragrafos = div_texto.find_all("p")
         texto = []
-        title = soup.find('h1', attrs={'class':re.compile('pg-color[0-9]+')}).get_text()
+        title = soup.find('title').get_text()
         for paragrafo in paragrafos:
             texto.append("\n")
             texto.append(paragrafo.get_text())
